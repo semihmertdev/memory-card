@@ -12,6 +12,7 @@ const GameOverModal = ({ score, bestScore, restartGame }) => {
     <div className="modal-overlay">
       <div className="modal-content">
         <h2>Game Over</h2>
+        <p>Better luck next time!</p> {/* Added paragraph */}
         <p>Score: {score}</p>
         <p>Best Score: {bestScore}</p>
         <button onClick={restartGame} className="restart-button">Restart Game</button>
