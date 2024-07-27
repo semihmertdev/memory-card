@@ -1,9 +1,13 @@
+// App.jsx
 import React, { useState, useEffect } from 'react';
 import Scoreboard from './components/Scoreboard';
 import CardGrid from './components/CardGrid';
 import StartScreen from './components/StartScreen';
 import GameOverModal from './components/GameOverModal';
+import WarningModal from './components/WarningModal';
+import WinningModal from './components/WinningModal'; // Import the new WinningModal
 import gameOverSoundFile from './assets/gameover.wav';
+import winningSoundFile from './assets/win.mp3'; // Add the winning sound file
 import bgMusicFile from './assets/more-time.mp3';
 import lowTimeMusicFile from './assets/low-time.mp3';
 
@@ -20,6 +24,7 @@ const App = () => {
   const [bgMusic, setBgMusic] = useState(null);
   const [lowTimeMusic, setLowTimeMusic] = useState(null);
   const [lowTimeTriggered, setLowTimeTriggered] = useState(false);
+  const [gameWon, setGameWon] = useState(false); // Add state for game won
 
   useEffect(() => {
     if (!bgMusic) {
@@ -107,6 +112,7 @@ const App = () => {
     setDifficulty(selectedDifficulty);
     setGameStarted(true);
     setGameOver(false);
+    setGameWon(false); // Reset gameWon state
     setScore(0);
     setClickedCards([]);
     setLowTimeTriggered(false);
@@ -127,15 +133,31 @@ const App = () => {
     if (lowTimeMusic) lowTimeMusic.pause();
   };
 
+  const handleGameWon = () => {
+    setFinalScore(score);
+    setGameWon(true);
+    setGameStarted(false);
+    setTimer(0);
+    playWinningSound();
+    if (bgMusic) bgMusic.pause();
+    if (lowTimeMusic) lowTimeMusic.pause();
+  };
+
   const playGameOverSound = () => {
     const gameOverSound = new Audio(gameOverSoundFile);
     gameOverSound.play();
+  };
+
+  const playWinningSound = () => {
+    const winningSound = new Audio(winningSoundFile);
+    winningSound.play();
   };
 
   const restartGame = () => {
     setScore(0);
     setClickedCards([]);
     setGameOver(false);
+    setGameWon(false);
     setFinalScore(0);
     setDifficulty(null);
     setGameStarted(false);
@@ -147,14 +169,17 @@ const App = () => {
 
   return (
     <div>
-      {!gameStarted && !gameOver ? (
+      {!gameStarted && !gameOver && !gameWon ? (
         <StartScreen startGame={startGame} />
       ) : (
         <>
           <Scoreboard score={score} bestScore={bestScore} timer={timer} />
-          <CardGrid cards={cards} shuffleCards={shuffleCards} setScore={setScore} setBestScore={setBestScore} onGameOver={handleGameOver} />
+          <CardGrid cards={cards} shuffleCards={shuffleCards} setScore={setScore} setBestScore={setBestScore} onGameOver={handleGameOver} onGameWon={handleGameWon} />
           {gameOver && (
             <GameOverModal score={finalScore} bestScore={bestScore} restartGame={restartGame} />
+          )}
+          {gameWon && (
+            <WinningModal score={finalScore} bestScore={bestScore} restartGame={restartGame} />
           )}
         </>
       )}

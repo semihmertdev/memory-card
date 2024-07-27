@@ -180,7 +180,8 @@ button i {
         font-weight: bolder;
     }
   
-  .restart-button {
+  .restart-button,
+  .win-button {
     margin-top: 20px;
     padding: 50px 150px;
     font-size: 2rem;

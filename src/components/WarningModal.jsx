@@ -1,3 +1,4 @@
+// WarningModal.jsx
 import React from 'react';
 
 const WarningModal = ({ onClose }) => {

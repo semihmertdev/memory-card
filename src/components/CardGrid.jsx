@@ -1,7 +1,8 @@
+// CardGrid.jsx
 import React, { useState } from 'react';
 import Card from './Card';
 
-const CardGrid = ({ cards, shuffleCards, setScore, setBestScore, onGameOver }) => {
+const CardGrid = ({ cards, shuffleCards, setScore, setBestScore, onGameOver, onGameWon }) => {
   const [clickedCards, setClickedCards] = useState([]);
 
   const handleCardClick = (card) => {
@@ -15,6 +16,9 @@ const CardGrid = ({ cards, shuffleCards, setScore, setBestScore, onGameOver }) =
       setClickedCards([...clickedCards, card.id]);
       if (newScore > setBestScore) {
         setBestScore(newScore);
+      }
+      if (newScore === cards.length) { // Check if all cards have been clicked
+        onGameWon(); // Call onGameWon when the game is won
       }
     }
     shuffleCards();
