@@ -3,9 +3,9 @@ import Scoreboard from './components/Scoreboard';
 import CardGrid from './components/CardGrid';
 import StartScreen from './components/StartScreen';
 import GameOverModal from './components/GameOverModal';
-import gameOverSoundFile from './assets/gameover.wav'; // Import the audio file
-import bgMusicFile from './assets/more-time.mp3'; // Import background music file
-import lowTimeMusicFile from './assets/low-time.mp3'; // Import low-timer music file
+import gameOverSoundFile from './assets/gameover.wav';
+import bgMusicFile from './assets/more-time.mp3';
+import lowTimeMusicFile from './assets/low-time.mp3';
 
 const App = () => {
   const [cards, setCards] = useState([]);
@@ -15,8 +15,8 @@ const App = () => {
   const [gameOver, setGameOver] = useState(false);
   const [finalScore, setFinalScore] = useState(0);
   const [clickedCards, setClickedCards] = useState([]);
-  const [difficulty, setDifficulty] = useState(null); // New state for difficulty
-  const [timer, setTimer] = useState(0); // New state for timer
+  const [difficulty, setDifficulty] = useState(null);
+  const [timer, setTimer] = useState(0);
   const [bgMusic, setBgMusic] = useState(null);
   const [lowTimeMusic, setLowTimeMusic] = useState(null);
   const [lowTimeTriggered, setLowTimeTriggered] = useState(false);
@@ -56,7 +56,6 @@ const App = () => {
   useEffect(() => {
     if (gameStarted) {
       fetchCards();
-      // Start timer based on difficulty
       if (difficulty === 'easy') setTimer(60);
       else if (difficulty === 'medium') setTimer(45);
       else if (difficulty === 'hard') setTimer(30);
@@ -64,8 +63,11 @@ const App = () => {
       if (bgMusic) {
         bgMusic.play();
       }
+    } else {
+      if (bgMusic) bgMusic.pause();
+      if (lowTimeMusic) lowTimeMusic.pause();
     }
-  }, [gameStarted, difficulty, bgMusic]);
+  }, [gameStarted, difficulty, bgMusic, lowTimeMusic]);
 
   useEffect(() => {
     if (timer > 0) {
@@ -108,7 +110,6 @@ const App = () => {
     setScore(0);
     setClickedCards([]);
     setLowTimeTriggered(false);
-    // Reset the timer based on difficulty
     if (selectedDifficulty === 'easy') setTimer(60);
     else if (selectedDifficulty === 'medium') setTimer(45);
     else if (selectedDifficulty === 'hard') setTimer(30);
@@ -120,7 +121,7 @@ const App = () => {
     setFinalScore(score);
     setGameOver(true);
     setGameStarted(false);
-    setTimer(0); // Reset the timer
+    setTimer(0);
     playGameOverSound();
     if (bgMusic) bgMusic.pause();
     if (lowTimeMusic) lowTimeMusic.pause();
@@ -134,15 +135,14 @@ const App = () => {
   const restartGame = () => {
     setScore(0);
     setClickedCards([]);
-    fetchCards();
     setGameOver(false);
     setFinalScore(0);
     setDifficulty(null);
     setGameStarted(false);
-    setTimer(0); // Reset the timer
+    setTimer(0);
     setLowTimeTriggered(false);
     if (lowTimeMusic) lowTimeMusic.pause();
-    if (bgMusic) bgMusic.play();
+    if (bgMusic) bgMusic.pause();
   };
 
   return (
