@@ -1,5 +1,8 @@
 # Pokemon Memory Game
 
+## Live Preview
+[Play the Pokemon Memory Game](https://poke-memory-card.netlify.app/)
+
 ## Description
 This is a fun and interactive memory game built with React, featuring Pokemon characters. Test your memory by clicking on Pokemon cards, but be careful not to click the same one twice!
 
