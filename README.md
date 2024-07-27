@@ -16,7 +16,6 @@ This is a fun and interactive memory game built with React, featuring Pokemon ch
 - Dynamic fetching of Pokemon data from PokeAPI
 - Randomized card shuffling after each click
 - Score tracking with current and best score display
-- Responsive design for various screen sizes
 - Game over modal with final score and restart option
 - Attractive Pokemon-themed UI
 - Difficulty selection with different time limits
@@ -25,13 +24,14 @@ This is a fun and interactive memory game built with React, featuring Pokemon ch
 - Special music track when time is running out
 
 ## Component Structure
-- App: Main game logic and state management
-- StartScreen: Initial game screen with difficulty selection
-- Scoreboard: Displays current and best scores, and time left
-- CardGrid: Manages the display and interaction of Pokemon cards
-- Card: Individual Pokemon card component
-- GameOverModal: Displayed when the game ends or time runs out
-- WarningModal: Displayed if no difficulty is selected on the start screen
+- **App**: Main game logic and state management
+- **StartScreen**: Initial game screen with difficulty selection
+- **Scoreboard**: Displays current and best scores, and time left
+- **CardGrid**: Manages the display and interaction of Pokemon cards
+- **Card**: Individual Pokemon card component
+- **GameOverModal**: Displayed when the game ends or time runs out
+- **WinningModal**: Displayed when the player wins the game
+- **WarningModal**: Displayed if no difficulty is selected on the start screen
 
 ## How to Play
 1. Select a difficulty level on the initial screen.
@@ -42,5 +42,6 @@ This is a fun and interactive memory game built with React, featuring Pokemon ch
 6. Aim for the highest score possible!
 7. The game also ends when time runs out, depending on the selected difficulty.
 8. When the game ends, a modal will appear showing your final score and the best score, with an option to restart the game.
+9. If you manage to click all cards without repetition, a winning modal will appear with a different sound effect.
 
 Enjoy and have fun testing your memory with Pokemon!
