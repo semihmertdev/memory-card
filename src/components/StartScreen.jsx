@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import WarningModal from './WarningModal';
 
 const StartScreen = ({ startGame }) => {
   const [selectedDifficulty, setSelectedDifficulty] = useState(null);
+  const [showWarning, setShowWarning] = useState(false);
 
   const handleDifficultyChange = (e) => {
     setSelectedDifficulty(e.target.value);
@@ -11,8 +13,12 @@ const StartScreen = ({ startGame }) => {
     if (selectedDifficulty) {
       startGame(selectedDifficulty);
     } else {
-      alert('Please select a difficulty level.');
+      setShowWarning(true);
     }
+  };
+
+  const handleCloseWarning = () => {
+    setShowWarning(false);
   };
 
   return (
@@ -55,7 +61,8 @@ const StartScreen = ({ startGame }) => {
           </label>
         </div>
       </div>
-      <button onClick={handleStartClick} className='start-game'>Start Game</button>
+      <button onClick={handleStartClick} className="start-game">Start Game</button>
+      {showWarning && <WarningModal onClose={handleCloseWarning} />}
     </div>
   );
 };
