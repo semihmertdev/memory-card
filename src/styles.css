@@ -43,33 +43,29 @@ p, h1, h2, h3, h4, h5, h6 {
     isolation: isolate;
 }
 
-/* Header styling */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem; /* Padding setting */
-    color: #EA4035; /* White text color */
-    height: 15vh; /* Height setting */
+    padding: 1rem 2rem; 
+    color: #EA4035; 
+    height: 15vh; 
 }
 
-/* Header heading styling */
 .header h1 {
-    font-size: 2rem; /* Header size */
-    font-weight: bolder; /* Bold font weight */
-    margin: 0; /* Remove default margins */
+    font-size: 2rem;
+    font-weight: bolder;
+    margin: 0; 
 }
 
-/* Header paragraph styling */
 .header p {
-    font-size: 1.2rem; /* Paragraph size */
-    font-weight: bold; /* Normal font weight */
-    margin: 0; /* Remove default margins */
-    text-align: right; /* Right alignment */
+    font-size: 1.2rem;
+    font-weight: bold; 
+    margin: 0; 
+    text-align: right;
     
 }
 
-/* Main content styling */
 .main {
     padding: 10px;
     height: 85vh;
@@ -78,23 +74,21 @@ p, h1, h2, h3, h4, h5, h6 {
     justify-content: center;
 }
 
-/* Card grid layout */
 .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 50px;
-    justify-content: center; /* Yatay ortalama */
-    align-content: center; /* Dikey ortalama */
+    justify-content: center;
+    align-content: center;
     margin: 0 20px;
 }
 
 
-/* Card styling with Pokémon-themed background */
 .card {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Dikey ortalama */
-    align-items: center; /* Yatay ortalama */
+    justify-content: space-between; 
+    align-items: center; 
     height: 290px;
     margin: 10px;
     background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/81ccfdb7-ac1d-423f-a276-af63abae5ba2/d5ouid9-b25eaf89-82dc-4e6b-a7c6-c012f6b64e32.png/v1/fit/w_429,h_613,q_70,strp/fire__bw__texture_by_pkmncardmaker264_d5ouid9-375w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjEzIiwicGF0aCI6IlwvZlwvODFjY2ZkYjctYWMxZC00MjNmLWEyNzYtYWY2M2FiYWU1YmEyXC9kNW91aWQ5LWIyNWVhZjg5LTgyZGMtNGU2Yi1hN2M2LWMwMTJmNmI2NGUzMi5wbmciLCJ3aWR0aCI6Ijw9NDI5In1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.kFVVJiQdq8j406lpWyaymU94x6MHjcVdmSimHwk2Upk');
@@ -112,8 +106,6 @@ p, h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-
-/* Text styling within the card */
 .card p {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 10px;
@@ -122,7 +114,6 @@ p, h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
 }
 
-/* Example to include Pokémon-specific styling */
 .card img {
     width: 150px;
     height: auto;
@@ -141,80 +132,39 @@ p, h1, h2, h3, h4, h5, h6 {
     padding: 10px;
 }
 
-/* Shuffle button styling */
 button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     height: 50px;
     width: 50px;
-    border: 2px solid rgba(0, 0, 0, 0.9); /* Attention-grabbing border color */
-    border-radius: 50%; /* Round shape */
-    background-color: #ff5733; /* Vibrant background color */
-    color: #fff; /* White text color */
+    border: 2px solid rgba(0, 0, 0, 0.9);
+    border-radius: 50%; 
+    background-color: #ff5733;
+    color: #fff;
     font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
 }
 
 button:hover {
-    background-color: #c70039; /* Darker background color on hover */
-    color: #fff; /* Text color on hover */
-    transform: scale(1.1); /* Slightly larger on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* More pronounced shadow on hover */
+    background-color: #c70039; 
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
 }
 
 button:active {
-    background-color: #900c3f; /* Darker background color on click */
-    transform: scale(1); /* Return to original size on click */
+    background-color: #900c3f; 
+    transform: scale(1);
 }
 
-/* Icon inside the button */
 button i {
-    font-size: 1.5rem; /* Icon size */
+    font-size: 1.5rem; 
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .card-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    }
-
-    .card {
-        height: 250px;
-        width: 150px;
-    }
-
-    .header h1 {
-        font-size: 1.5rem; /* Adjust header size for smaller screens */
-    }
-
-    .header p {
-        font-size: 0.875rem; /* Adjust paragraph size for smaller screens */
-    }
-}
-
-@media (max-width: 480px) {
-    .card-grid {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    }
-
-    .card {
-        height: 200px;
-        width: 100px;
-    }
-
-    .header h1 {
-        font-size: 1.25rem; /* Further adjust header size for very small screens */
-    }
-
-    .header p {
-        font-size: 0.75rem; /* Further adjust paragraph size for very small screens */
-    }
-}
-/* In your main CSS file or a separate CSS module */
 .start-screen {
     display: flex;
     flex-direction: column;
@@ -235,38 +185,35 @@ button i {
     background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/81ccfdb7-ac1d-423f-a276-af63abae5ba2/d5ouid9-b25eaf89-82dc-4e6b-a7c6-c012f6b64e32.png/v1/fit/w_429,h_613,q_70,strp/fire__bw__texture_by_pkmncardmaker264_d5ouid9-375w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjEzIiwicGF0aCI6IlwvZlwvODFjY2ZkYjctYWMxZC00MjNmLWEyNzYtYWY2M2FiYWU1YmEyXC9kNW91aWQ5LWIyNWVhZjg5LTgyZGMtNGU2Yi1hN2M2LWMwMTJmNmI2NGUzMi5wbmciLCJ3aWR0aCI6Ijw9NDI5In1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.kFVVJiQdq8j406lpWyaymU94x6MHjcVdmSimHwk2Upk');
   }
   
-  .start-button:hover { /* Darker background color on hover */
-    color: #fff; /* Text color on hover */
-    transform: scale(1.1); /* Slightly larger on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* More pronounced shadow on hover */
+  .start-button:hover {
+    color: #fff; 
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
   }
   
   button:hover {
-    background-color: #c70039; /* Darker background color on hover */
-    color: #fff; /* Text color on hover */
-    transform: scale(1.1); /* Slightly larger on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* More pronounced shadow on hover */
+    background-color: #c70039;
+    color: #fff;
+    transform: scale(1.1); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
 }
 
- 
-  /* Modal Overlay */
 .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Darker overlay to match the theme */
+    background: rgba(0, 0, 0, 0.7); 
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1000;
 }
 
-/* Modal Content */
 .modal-content {
     background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/81ccfdb7-ac1d-423f-a276-af63abae5ba2/d5oun1x-6975d2e1-093f-4f3f-88f4-21ea09a01e93.png/v1/fit/w_431,h_614,q_70,strp/lightning__bw__texture_by_pkmncardmaker264_d5oun1x-375w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjE0IiwicGF0aCI6IlwvZlwvODFjY2ZkYjctYWMxZC00MjNmLWEyNzYtYWY2M2FiYWU1YmEyXC9kNW91bjF4LTY5NzVkMmUxLTA5M2YtNGYzZi04OGY0LTIxZWEwOWEwMWU5My5wbmciLCJ3aWR0aCI6Ijw9NDMxIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.jHEFjRdLUpvvMcXU77rGv4MY7ngZQHSZtnoszNFbqvs");
-    color: #EA4035; /* Light text color for contrast */
+    color: #EA4035; 
     padding: 20px;
     border-radius: 10px;
     text-align: center;
@@ -276,7 +223,6 @@ button i {
     font-weight: bold;
 }
 
-/* Restart Button */
 .restart-button {
     margin-top: 20px;
     padding: 50px 150px;
@@ -288,16 +234,14 @@ button i {
     background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/81ccfdb7-ac1d-423f-a276-af63abae5ba2/d5ouid9-b25eaf89-82dc-4e6b-a7c6-c012f6b64e32.png/v1/fit/w_429,h_613,q_70,strp/fire__bw__texture_by_pkmncardmaker264_d5ouid9-375w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjEzIiwicGF0aCI6IlwvZlwvODFjY2ZkYjctYWMxZC00MjNmLWEyNzYtYWY2M2FiYWU1YmEyXC9kNW91aWQ5LWIyNWVhZjg5LTgyZGMtNGU2Yi1hN2M2LWMwMTJmNmI2NGUzMi5wbmciLCJ3aWR0aCI6Ijw9NDI5In1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.kFVVJiQdq8j406lpWyaymU94x6MHjcVdmSimHwk2Upk');
   }
 
-/* Restart Button Hover */
 .restart-button:hover {
-    background-color: #c70039; /* Darker shade for hover effect */
-    transform: scale(1.05); /* Slightly larger on hover */
+    background-color: #c70039; 
+    transform: scale(1.05); 
 }
 
-/* Restart Button Active */
 .restart-button:active {
-    background-color: #900c3f; /* Darker shade for active state */
-    transform: scale(1); /* Return to original size on click */
+    background-color: #900c3f;
+    transform: scale(1);
 }
 
   
@@ -308,4 +252,42 @@ button i {
 
 .modal-content p {
     font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .card-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .card {
+        height: 250px;
+        width: 150px;
+    }
+
+    .header h1 {
+        font-size: 1.5rem; 
+    }
+
+    .header p {
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    .card {
+        height: 200px;
+        width: 100px;
+    }
+
+    .header h1 {
+        font-size: 1.25rem; 
+    }
+
+    .header p {
+        font-size: 0.75rem;
+    }
 }
