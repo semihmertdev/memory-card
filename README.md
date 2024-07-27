@@ -19,18 +19,28 @@ This is a fun and interactive memory game built with React, featuring Pokemon ch
 - Responsive design for various screen sizes
 - Game over modal with final score and restart option
 - Attractive Pokemon-themed UI
+- Difficulty selection with different time limits
+- Warning modal for unselected difficulty
+- Background music during gameplay
+- Special music track when time is running out
 
 ## Component Structure
 - App: Main game logic and state management
-- StartScreen: Initial game screen
-- Scoreboard: Displays current and best scores
+- StartScreen: Initial game screen with difficulty selection
+- Scoreboard: Displays current and best scores, and time left
 - CardGrid: Manages the display and interaction of Pokemon cards
 - Card: Individual Pokemon card component
-- GameOverModal: Displayed when the game ends
+- GameOverModal: Displayed when the game ends or time runs out
+- WarningModal: Displayed if no difficulty is selected on the start screen
 
 ## How to Play
-1. Click the "Start Game" button on the initial screen.
-2. Click on a Pokemon card to earn a point.
-3. Try to click all cards without repeating any.
-4. If you click the same card twice, the game ends.
-5. Aim for the highest score possible!
+1. Select a difficulty level on the initial screen.
+2. Click the "Start Game" button to begin.
+3. Click on a Pokemon card to earn a point.
+4. Try to click all cards without repeating any.
+5. If you click the same card twice, the game ends.
+6. Aim for the highest score possible!
+7. The game also ends when time runs out, depending on the selected difficulty.
+8. When the game ends, a modal will appear showing your final score and the best score, with an option to restart the game.
+
+Enjoy and have fun testing your memory with Pokemon!
