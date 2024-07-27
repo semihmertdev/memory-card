@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import Card from './Card';
 
-const CardGrid = ({ cards, shuffleCards, setScore, setBestScore }) => {
+const CardGrid = ({ cards, shuffleCards, setScore, setBestScore, onGameOver }) => {
   const [clickedCards, setClickedCards] = useState([]);
 
   const handleCardClick = (card) => {
     if (clickedCards.includes(card.id)) {
       setScore(0);
       setClickedCards([]);
+      onGameOver();
     } else {
       const newScore = clickedCards.length + 1;
       setScore(newScore);
@@ -27,7 +28,7 @@ const CardGrid = ({ cards, shuffleCards, setScore, setBestScore }) => {
         ))}
       </div>
       <div className="btn">
-      <button onClick={shuffleCards}><i class="fas fa-random"></i></button>
+        <button onClick={shuffleCards}><i className="fas fa-random"></i></button>
       </div>
     </div>
   );

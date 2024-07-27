@@ -214,3 +214,98 @@ button i {
         font-size: 0.75rem; /* Further adjust paragraph size for very small screens */
     }
 }
+/* In your main CSS file or a separate CSS module */
+.start-screen {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: #EA4035;
+  }
+  
+  .start-button {
+    padding: 50px 150px;
+    font-size: 2rem;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/81ccfdb7-ac1d-423f-a276-af63abae5ba2/d5ouid9-b25eaf89-82dc-4e6b-a7c6-c012f6b64e32.png/v1/fit/w_429,h_613,q_70,strp/fire__bw__texture_by_pkmncardmaker264_d5ouid9-375w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjEzIiwicGF0aCI6IlwvZlwvODFjY2ZkYjctYWMxZC00MjNmLWEyNzYtYWY2M2FiYWU1YmEyXC9kNW91aWQ5LWIyNWVhZjg5LTgyZGMtNGU2Yi1hN2M2LWMwMTJmNmI2NGUzMi5wbmciLCJ3aWR0aCI6Ijw9NDI5In1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.kFVVJiQdq8j406lpWyaymU94x6MHjcVdmSimHwk2Upk');
+  }
+  
+  .start-button:hover { /* Darker background color on hover */
+    color: #fff; /* Text color on hover */
+    transform: scale(1.1); /* Slightly larger on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* More pronounced shadow on hover */
+  }
+  
+  button:hover {
+    background-color: #c70039; /* Darker background color on hover */
+    color: #fff; /* Text color on hover */
+    transform: scale(1.1); /* Slightly larger on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* More pronounced shadow on hover */
+}
+
+ 
+  /* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Darker overlay to match the theme */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* Modal Content */
+.modal-content {
+    background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/81ccfdb7-ac1d-423f-a276-af63abae5ba2/d5oun1x-6975d2e1-093f-4f3f-88f4-21ea09a01e93.png/v1/fit/w_431,h_614,q_70,strp/lightning__bw__texture_by_pkmncardmaker264_d5oun1x-375w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjE0IiwicGF0aCI6IlwvZlwvODFjY2ZkYjctYWMxZC00MjNmLWEyNzYtYWY2M2FiYWU1YmEyXC9kNW91bjF4LTY5NzVkMmUxLTA5M2YtNGYzZi04OGY0LTIxZWEwOWEwMWU5My5wbmciLCJ3aWR0aCI6Ijw9NDMxIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.jHEFjRdLUpvvMcXU77rGv4MY7ngZQHSZtnoszNFbqvs");
+    color: #EA4035; /* Light text color for contrast */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 90%;
+    width: 400px;
+    border: 3px solid #EA4035;
+    font-weight: bold;
+}
+
+/* Restart Button */
+.restart-button {
+    margin-top: 20px;
+    padding: 50px 150px;
+    font-size: 2rem;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/81ccfdb7-ac1d-423f-a276-af63abae5ba2/d5ouid9-b25eaf89-82dc-4e6b-a7c6-c012f6b64e32.png/v1/fit/w_429,h_613,q_70,strp/fire__bw__texture_by_pkmncardmaker264_d5ouid9-375w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjEzIiwicGF0aCI6IlwvZlwvODFjY2ZkYjctYWMxZC00MjNmLWEyNzYtYWY2M2FiYWU1YmEyXC9kNW91aWQ5LWIyNWVhZjg5LTgyZGMtNGU2Yi1hN2M2LWMwMTJmNmI2NGUzMi5wbmciLCJ3aWR0aCI6Ijw9NDI5In1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.kFVVJiQdq8j406lpWyaymU94x6MHjcVdmSimHwk2Upk');
+  }
+
+/* Restart Button Hover */
+.restart-button:hover {
+    background-color: #c70039; /* Darker shade for hover effect */
+    transform: scale(1.05); /* Slightly larger on hover */
+}
+
+/* Restart Button Active */
+.restart-button:active {
+    background-color: #900c3f; /* Darker shade for active state */
+    transform: scale(1); /* Return to original size on click */
+}
+
+  
+.modal-content h2 {
+    font-size: 4rem;
+    margin: 0;
+}
+
+.modal-content p {
+    font-size: 1.5rem;
+}
