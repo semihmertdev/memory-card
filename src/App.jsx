@@ -3,6 +3,7 @@ import Scoreboard from './components/Scoreboard';
 import CardGrid from './components/CardGrid';
 import StartScreen from './components/StartScreen';
 import GameOverModal from './components/GameOverModal';
+import gameOverSoundFile from './assets/gameover.wav'; // Import the audio file
 
 const App = () => {
   const [cards, setCards] = useState([]);
@@ -10,8 +11,10 @@ const App = () => {
   const [bestScore, setBestScore] = useState(0);
   const [gameStarted, setGameStarted] = useState(false);
   const [gameOver, setGameOver] = useState(false);
-  const [finalScore, setFinalScore] = useState(0); // New state for final score
+  const [finalScore, setFinalScore] = useState(0);
   const [clickedCards, setClickedCards] = useState([]);
+  const [difficulty, setDifficulty] = useState(null); // New state for difficulty
+  const [timer, setTimer] = useState(0); // New state for timer
 
   const fetchCards = async () => {
     try {
@@ -35,8 +38,23 @@ const App = () => {
   useEffect(() => {
     if (gameStarted) {
       fetchCards();
+      // Start timer based on difficulty
+      if (difficulty === 'easy') setTimer(60);
+      else if (difficulty === 'medium') setTimer(45);
+      else if (difficulty === 'hard') setTimer(30);
     }
-  }, [gameStarted]);
+  }, [gameStarted, difficulty]);
+
+  useEffect(() => {
+    if (timer > 0) {
+      const timerId = setInterval(() => {
+        setTimer((prevTimer) => prevTimer - 1);
+      }, 1000);
+      return () => clearInterval(timerId);
+    } else if (timer === 0 && gameStarted) {
+      handleGameOver();
+    }
+  }, [timer, gameStarted]);
 
   useEffect(() => {
     if (score > bestScore) {
@@ -49,33 +67,49 @@ const App = () => {
     setCards(shuffled);
   };
 
-  const startGame = () => {
+  const startGame = (selectedDifficulty) => {
+    setDifficulty(selectedDifficulty);
     setGameStarted(true);
     setGameOver(false);
     setScore(0);
     setClickedCards([]);
+    // Reset the timer based on difficulty
+    if (selectedDifficulty === 'easy') setTimer(60);
+    else if (selectedDifficulty === 'medium') setTimer(45);
+    else if (selectedDifficulty === 'hard') setTimer(30);
   };
 
   const handleGameOver = () => {
-    setFinalScore(score); // Set final score when game ends
+    setFinalScore(score);
     setGameOver(true);
+    setGameStarted(false);
+    setTimer(0); // Reset the timer
+    playGameOverSound();
+  };
+
+  const playGameOverSound = () => {
+    const gameOverSound = new Audio(gameOverSoundFile);
+    gameOverSound.play();
   };
 
   const restartGame = () => {
     setScore(0);
     setClickedCards([]);
-    fetchCards(); // Fetch new cards
-    setGameOver(false); // Hide the modal
-    setFinalScore(0); // Reset final score for the next game
+    fetchCards();
+    setGameOver(false);
+    setFinalScore(0);
+    setDifficulty(null);
+    setGameStarted(false);
+    setTimer(0); // Reset the timer
   };
 
   return (
     <div>
-      {!gameStarted ? (
+      {!gameStarted && !gameOver ? (
         <StartScreen startGame={startGame} />
       ) : (
         <>
-          <Scoreboard score={score} bestScore={bestScore} />
+          <Scoreboard score={score} bestScore={bestScore} timer={timer} />
           <CardGrid cards={cards} shuffleCards={shuffleCards} setScore={setScore} setBestScore={setBestScore} onGameOver={handleGameOver} />
           {gameOver && (
             <GameOverModal score={finalScore} bestScore={bestScore} restartGame={restartGame} />

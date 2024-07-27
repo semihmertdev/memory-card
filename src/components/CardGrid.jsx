@@ -8,7 +8,7 @@ const CardGrid = ({ cards, shuffleCards, setScore, setBestScore, onGameOver }) =
     if (clickedCards.includes(card.id)) {
       setScore(0);
       setClickedCards([]);
-      onGameOver();
+      onGameOver(); // Call onGameOver when a card is clicked twice
     } else {
       const newScore = clickedCards.length + 1;
       setScore(newScore);
@@ -26,9 +26,6 @@ const CardGrid = ({ cards, shuffleCards, setScore, setBestScore, onGameOver }) =
         {cards.map((card) => (
           <Card key={card.id} card={card} handleClick={handleCardClick} />
         ))}
-      </div>
-      <div className="btn">
-        <button onClick={shuffleCards}><i className="fas fa-random"></i></button>
       </div>
     </div>
   );
