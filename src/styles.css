@@ -347,3 +347,49 @@ button i {
     text-align: center;
   }
   
+  @media (max-width: 480px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .header p {
+        font-size: 0.9rem;
+    }
+
+    .card {
+        height: 130px;
+    }
+
+    .card p{
+        font-size: 0.7rem;
+    }
+
+    .card-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 25px;
+        margin: 0;
+    }
+
+    .start-screen h1 {
+        font-size: 2rem;
+    }
+
+    .start-screen p {
+        font-size: 0.9rem;
+    }
+
+    .start-screen button {
+        font-size: 1rem;
+    }
+
+    .start-screen select {
+        font-size: 0.9rem;
+    }
+
+    button {
+        height: 35px;
+        width: 35px;
+        font-size: 0.9rem;
+    }
+}
+
