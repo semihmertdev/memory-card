@@ -254,45 +254,6 @@ button i {
 .modal-content p {
     font-size: 1.5rem;
 }
-
-@media (max-width: 768px) {
-    .card-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    }
-
-    .card {
-        height: 250px;
-        width: 150px;
-    }
-
-    .header h1 {
-        font-size: 1.5rem; 
-    }
-
-    .header p {
-        font-size: 0.875rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .card-grid {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    }
-
-    .card {
-        height: 200px;
-        width: 100px;
-    }
-
-    .header h1 {
-        font-size: 1.25rem; 
-    }
-
-    .header p {
-        font-size: 0.75rem;
-    }
-}
-
 .start-screen button{
         margin-top: 20px;
         padding: 50px 150px;
@@ -349,7 +310,7 @@ button i {
   
   @media (max-width: 480px) {
     .header h1 {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     .header p {
