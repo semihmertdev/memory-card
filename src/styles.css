@@ -318,7 +318,7 @@ button i {
     }
 
     .card {
-        height: 130px;
+        height: 120px;
     }
 
     .card p{
@@ -328,7 +328,7 @@ button i {
     .card-grid {
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
         gap: 25px;
-        margin: 0;
+        margin: 10px 0 0 0;
     }
 
     .start-screen h1 {
