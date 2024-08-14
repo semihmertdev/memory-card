@@ -322,12 +322,12 @@ button i {
     }
 
     .card p{
-        font-size: 0.7rem;
+        font-size: 0.6rem;
     }
 
     .card-grid {
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        gap: 25px;
+        gap: 15px;
         margin: 10px 0 0 0;
     }
 
